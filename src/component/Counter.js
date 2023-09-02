@@ -4,7 +4,7 @@ function Counter() {
   let [count, setCount] = useState(0);
 
   function updateCount() {
-    setCount(count + 1\);
+    setCount(count + 1);
     console.log("count is" + count);
   }
 
