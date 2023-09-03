@@ -1,9 +1,13 @@
 import Counter from "./component/Counter";
+import Fruits from "./component/Fruits";
+import Notes from "./component/Notes";
 
 function App() {
   return (
     <div>
-      <Counter />
+      {/* <Counter/> */}
+      {/* <Fruits /> */}
+      <Notes />
     </div>
   );
 }
