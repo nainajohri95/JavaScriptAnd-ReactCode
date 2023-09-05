@@ -14,11 +14,17 @@ function Notes() {
     setNotes(newNoteArray);
   }
 
+  const ulStyle = {
+    listStyle: "none",
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 1fr)",
+    gap: "20px",
+  };
   return (
     <>
       <input onChange={updateCurrNote} type="text" />
       <button onClick={addNotes}>Submit</button>
-      <ul>
+      <ul style={ulStyle}>
         {notes.map((note, index) => {
           return (
             <li key={index}>
