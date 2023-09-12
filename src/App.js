@@ -7,6 +7,7 @@ import Notes from "./component/Notes";
 import UserForm from "./forms and hooks/UserForm";
 import UseEffectHook from "./forms and hooks/UseEffectHook";
 import NewsApp from "./component/NewsApp";
+import Converter from "./component/Converter";
 
 function App() {
   const [countInParent, setCountInParent] = useState(0);
@@ -28,7 +29,8 @@ function App() {
       <Child2 countFromParent={countInParent} uploadData={uploadData} />  */}
       {/* <UserForm /> */}
       {/* <UseEffectHook /> */}
-      <NewsApp />
+      {/* <NewsApp /> */}
+      <Converter />
     </div>
   );
 }
