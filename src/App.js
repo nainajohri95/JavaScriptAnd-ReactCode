@@ -8,6 +8,13 @@ import UserForm from "./forms and hooks/UserForm";
 import UseEffectHook from "./forms and hooks/UseEffectHook";
 import NewsApp from "./component/NewsApp";
 import Converter from "./component/Converter";
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import Pricing from "./pages/Pricing";
+import NotFound from "./pages/NotFound";
+import Navigation from "./component/Navigation";
+import Profile from "./pages/Profile";
 
 function App() {
   const [countInParent, setCountInParent] = useState(0);
@@ -30,7 +37,16 @@ function App() {
       {/* <UserForm /> */}
       {/* <UseEffectHook /> */}
       {/* <NewsApp /> */}
-      <Converter />
+      {/* <Converter /> */}
+      <Navigation />
+      <Routes>
+        <Route path="*" element={<NotFound />}></Route>
+        <Route path="/abut" element={<About />}></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="/pricing" element={<Pricing />}></Route>
+        <Route path="/user/:userId/:projectId" element={<Profile />}></Route>
+        {/* here : tell that this userId is not a part of route this is something dynamic(this is url parameter) */}
+      </Routes>
     </div>
   );
 }
