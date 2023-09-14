@@ -15,6 +15,12 @@ import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
 import Navigation from "./component/Navigation";
 import Profile from "./pages/Profile";
+import Project from "./pages/Project";
+import FreePricing from "./pages/FreePricing";
+import PremiumPricing from "./pages/PremiumPricing";
+import Freemium from "./pages/Freemium";
+import ForPrime from "./pages/ForPrime";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   const [countInParent, setCountInParent] = useState(0);
@@ -41,11 +47,21 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="*" element={<NotFound />}></Route>
-        <Route path="/abut" element={<About />}></Route>
+        <Route path="/about" element={<About />}></Route>
         <Route path="login" element={<Login />}></Route>
-        <Route path="/pricing" element={<Pricing />}></Route>
-        <Route path="/user/:userId/:projectId" element={<Profile />}></Route>
+        <Route path="/user/:userId/" element={<Profile />}></Route>
+        <Route path="/user/:userId/:projectId" element={<Project />}></Route>
         {/* here : tell that this userId is not a part of route this is something dynamic(this is url parameter) */}
+
+        <Route element={<ProtectedRoute />}>
+          <Route path="/prime" element={<ForPrime />}></Route>
+        </Route>
+
+        <Route path="/pricing" element={<Pricing />}>
+          <Route path="free" element={<FreePricing />}></Route>
+          <Route path=" premium" element={<PremiumPricing />}></Route>
+          <Route path=" freemium" element={<Freemium />}></Route>
+        </Route>
       </Routes>
     </div>
   );
